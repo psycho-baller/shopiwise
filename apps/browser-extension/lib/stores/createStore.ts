@@ -9,7 +9,10 @@ export function createStoreSyncedWithStorage<T>({
 	initialValue: T;
 }) {
 	const { subscribe, set, update } = writable<T>(initialValue);
-	const storage = new Storage();
+	const storage = new Storage({
+		copiedKeyList: ['shield-modulation'],
+		area: 'local'
+	});
 
 	async function init() {
 		const valueFromStorage = await storage.get<T>(key);

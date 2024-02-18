@@ -18,31 +18,44 @@
 </script>
 
 <script lang="ts">
-	import { aiResponse, updateAiResponse } from '~lib/stores/aiResponse';
+	import { aiResponse, updateAiResponse, type AiProductIntention } from '~lib/stores/aiResponse';
 	import browser from 'webextension-polyfill';
-	let productDescription: string;
+	import Hoverable from '~components/Hoverable.svelte';
+	// import { options } from '~lib/stores/options';
+	let productAiResponse: AiProductIntention[];
 	onMount(async () => {
 		// Get the product ID (ASIN) from the URL
 		const url = window.location.href;
-		const productId = url.split('/dp/')[1].split('/')[0];
+		const productId = url.split('/dp/')[1].split('/')[0].split('?')[0];
 
 		// check if the product is already in local storage
-		aiResponse.init();
+		await aiResponse.init();
 		console.log($aiResponse);
-		$: productDescription = $aiResponse[productId];
-		if (!productDescription) {
+		productAiResponse = $aiResponse[productId];
+		console.log(productAiResponse);
+		if (!productAiResponse) {
+			console.log('fetching', $aiResponse, productId);
 			// if not, send a message to the background script to fetch the product
-			const response = await browser.runtime.sendMessage({
-				action: 'suggest',
-				productId
-			});
+			const response = (await browser.runtime.sendMessage({
+				action: 'fetchIntentions',
+				productTitle: document.title?.split(':')[0],
+				userInfo: '$options'
+			})) as AiProductIntention[];
+			console.log(response);
 			updateAiResponse(productId, response);
+			productAiResponse = response;
 		}
 	});
 </script>
 
-{#if productDescription}
-	<div id="" class="">
-		{productDescription}
+{#if productAiResponse}
+	<div id="" class="bg-teal-500">
+		{#each productAiResponse as product}
+			<Hoverable character={product} />
+		{/each}
+	</div>
+{:else}
+	<div class="bg-red-500">
+		<p>Loading...</p>
 	</div>
 {/if}

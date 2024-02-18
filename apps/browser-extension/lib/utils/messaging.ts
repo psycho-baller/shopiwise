@@ -1,6 +1,6 @@
 import browser from 'webextension-polyfill';
 export type MessageToBackgroundRequest =
-	| { action: 'suggest'; productId: string }
+	| { action: 'fetchIntentions'; productTitle: string; userInfo: string }
 	| { action: 'openOptionsPage' };
 
 /** Sends a message to the background script, captured in {@link ~background/index.ts}. */

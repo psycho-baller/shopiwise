@@ -1,6 +1,6 @@
-import { sendMessageToContentScript, type MessageToBackgroundRequest } from 'lib/utils/messaging';
+import { type MessageToBackgroundRequest } from 'lib/utils/messaging';
 import browser from 'webextension-polyfill';
-import { suggest } from '~lib/llm';
+import { fetchIntentions } from '~lib/llm';
 
 // browser.runtime.onInstalled.addListener((details) => {
 // 	if (details.reason === 'install') {
@@ -16,9 +16,10 @@ import { suggest } from '~lib/llm';
 
 browser.runtime.onMessage.addListener(async (message: MessageToBackgroundRequest) => {
 	switch (message.action) {
-		case 'suggest': {
+		case 'fetchIntentions': {
 			// send response back
-			const aiRes = await suggest(message.content);
+			console.log('suggesting');
+			const aiRes = await fetchIntentions(message.productTitle, message.userInfo);
 			return aiRes;
 		}
 		case 'openOptionsPage':
