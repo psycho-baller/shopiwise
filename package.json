@@ -1,14 +1,15 @@
 {
-	"name": "eco-enlightened",
-	"displayName": "Eco Enlightened",
+	"name": "shopiwise",
+	"displayName": "Shopiwise - Shop wisely",
 	"version": "0.0.1",
-	"description": "Where sustainability meets your thoughts",
+	"description": "Only buy what you need",
 	"author": "Rami <rami.rami@ucalgary.ca> (ramimaalouf.tech)",
 	"license": "MIT",
-	"homepage_url": "https://github.com/psycho.baller/eco-enlightened",
-	"contributors": [
-		"Rami <rami.rami@ucalgary.ca> (ramimaalouf.tech)"
-	],
+	"homepage_url": "https://github.com/psycho.baller/shopiwise",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/psycho.baller/shopiwise.git"
+	},
 	"scripts": {
 		"build": "turbo run build",
 		"dev": "turbo run dev",
