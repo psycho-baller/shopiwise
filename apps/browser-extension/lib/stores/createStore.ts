@@ -1,5 +1,5 @@
 import { writable } from 'svelte/store';
-import { Storage } from '@plasmohq/storage/dist';
+import { Storage } from '@plasmohq/storage';
 
 export function createStoreSyncedWithStorage<T>({
 	key,
