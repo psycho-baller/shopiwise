@@ -1,4 +1,4 @@
-# Eco Enlightened
+# Shopiwise
 
 ## Inspiration
 
