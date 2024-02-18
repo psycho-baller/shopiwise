@@ -1,5 +1,6 @@
 import sharedConfig from 'tailwind-config/tailwind.config.js';
 
 module.exports = {
-	presets: [sharedConfig]
+	presets: [sharedConfig],
+	plugins: [require('@tailwindcss/forms')]
 };

@@ -1,7 +1,7 @@
 import { createStoreSyncedWithStorage } from './createStore';
 
-type Options = { copyToClipboard: boolean };
-const initialOptions: Options = { copyToClipboard: true };
+type Options = { userInfo: string };
+const initialOptions: Options = { userInfo: '' };
 export const options = createStoreSyncedWithStorage<Options>({
 	key: 'options',
 	initialValue: initialOptions

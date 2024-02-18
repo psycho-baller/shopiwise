@@ -8,7 +8,7 @@
 	// --- Recording Logic ---
 
 	async function toggleRecording() {
-		sendMessageToContentScript({ command: 'toggle-recording' });
+		// sendMessageToContentScript({ command: 'toggle-recording' });
 	}
 
 	// --- Local Shortcuts ---
