@@ -1,4 +1,4 @@
-# Eco Enlightened Extension
+# Shopiwise Erowser Extension
 
 ## Table of Contents
 <!-- 
@@ -30,7 +30,7 @@ This should create a production bundle for your extension, ready to be zipped an
 
 ## Built With
 
-The Eco Enlightened extension is built using:
+The Shopiwise extension is built using:
 
 - [Plasmo](https://docs.plasmo.com/): A framework for building Chrome extensions.
 - [Svelte](https://svelte.dev/): A JavaScript framework for building user interfaces.
@@ -39,7 +39,7 @@ The Eco Enlightened extension is built using:
 
 ## Contributing
 
-Your contributions to the development of the Eco Enlightened extension are most welcome. Here's how you can contribute:
+Your contributions to the development of the Shopiwise extension are most welcome. Here's how you can contribute:
 
 1. Fork the repository.
 2. Create a new branch for your feature or bugfix: `git checkout -b feature/your-feature-name` or `git checkout -b fix/your-bugfix-name`
@@ -49,9 +49,6 @@ Your contributions to the development of the Eco Enlightened extension are most 
 
 Please ensure that your code adheres to the project's coding conventions and is well-documented.
 
-## License
-
-The Whispering Chrome extension is released under the [MIT License](https://opensource.org/licenses/MIT).
 
 ## Support and Feedback
 
