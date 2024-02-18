@@ -10,6 +10,7 @@ Your personal shopping companion designed to empower mindful purchasing decision
 ## What it does
 
 - In a world filled with tempting offers and unconscious motivations, ShopiWise provides invaluable insights into the intentions driving your shopping choices, empowering you to make more mindful purchasing decisions. By analyzing your shopping habits and providing personalized recommendations, ShopiWise helps you align your purchases with your values and long-term goals. ShopiWise is your personal shopping companion, designed to help you make more informed and mindful purchasing decisions.
+- ShopiWise is a browser extension that uses a language model to analyze your shopping habits and provide personalized recommendations. It uses a vector database of knowledge on financial literacy & management, and the psychology of consumer behavior to provide insights into your shopping habits and unconscious motivations
 
 ## How we built it
 
