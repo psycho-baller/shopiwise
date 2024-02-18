@@ -1,0 +1,29 @@
+{
+	"name": "eco-enlightened",
+	"displayName": "Eco Enlightened",
+	"version": "0.0.1",
+	"description": "Where sustainability meets your thoughts",
+	"author": "Rami <rami.rami@ucalgary.ca> (ramimaalouf.tech)",
+	"license": "MIT",
+	"homepage_url": "https://github.com/psycho.baller/eco-enlightened",
+	"contributors": [
+		"Rami <rami.rami@ucalgary.ca> (ramimaalouf.tech)"
+	],
+	"scripts": {
+		"build": "turbo run build",
+		"dev": "turbo run dev",
+		"format": "prettier --write .",
+		"lint": "turbo run lint"
+	},
+	"packageManager": "pnpm@8.6.9",
+	"dependencies": {
+		"@manypkg/cli": "latest",
+		"eslint": "^8.40.0",
+		"eslint-config-custom": "0.0.0",
+		"prettier": "^2.8.8",
+		"prettier-plugin-svelte": "^2.10.0",
+		"prettier-plugin-tailwindcss": "^0.2.5",
+		"tailwind-config": "0.0.0",
+		"turbo": "latest"
+	}
+}
