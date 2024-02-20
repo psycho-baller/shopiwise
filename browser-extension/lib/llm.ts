@@ -1,7 +1,7 @@
-export async function fetchIntentions(product_title: string, user_info: string) {
+export async function fetchIntentions(productTitle: string, userInfo: string) {
 	const res = await fetch('http://fastapi.localhost/intentions', {
 		method: 'POST',
-		body: JSON.stringify({ product_title, user_info }),
+		body: JSON.stringify({ productTitle, userInfo }),
 		headers: {
 			'Content-Type': 'application/json'
 		}

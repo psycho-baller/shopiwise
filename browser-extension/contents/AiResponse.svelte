@@ -60,7 +60,7 @@
 
 {#if productAiResponse}
 	<div class="mb-3 flex flex-col gap-y-4 border-b-2 border-gray-300 pb-3">
-		<h3 class="text-center text-2xl font-bold">Potential unrecognized intentions</h3>
+		<h3 class="text-center text-2xl font-bold">Unconscious motivations</h3>
 		<Motion let:motion {variants} animate="visible" initial="hidden">
 			<div use:motion id="intentions" class="flex flex-col gap-y-4 font-bold will-change-transform">
 				{#each productAiResponse as product, i}
