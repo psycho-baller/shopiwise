@@ -16,23 +16,14 @@ Your personal shopping companion designed to empower mindful purchasing decision
 
 - We built ShopiWise using a variety of technologies.
 - For the backend:
-  - Python with FastAPI
-  - For the LLM:
-    - LangChain
-    - OpenAI
-    - pgVector for the vector database
-  - PostgreSQL for the database
-  - Redis for caching
-  - Docker and Docker Compose for local development
+  - Go
+  - OpenAI API
 - For the browser extension:
   - TypeScript
   - Svelte
   - Tailwind CSS
   - Svelte Motion for animations
   - Plasmo framework to connect all these technologies together
-- To manage the monorepo:
-  - Turborepo
-
 
 ## Challenges we ran into
 
