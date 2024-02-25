@@ -1,0 +1,76 @@
+name: 'Submit to Web Store'
+on: [release]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Cache pnpm modules
+        uses: actions/cache@v3
+        with:
+          path: ~/snipTube/.pnpm-store
+          key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-
+      - uses: pnpm/action-setup@v2.2.4
+        with:
+          version: latest
+          run_install: true
+      - name: Use Node.js 18
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          cache: 'pnpm'
+
+      - name: Build the chromium based extension and zip it
+        run: pnpm build:plasmo --zip
+        working-directory: browser-extension
+      - name: Build the safari based extension and zip it
+        run: pnpm build:plasmo --target=safari-mv3 --zip
+        working-directory: browser-extension
+      - name: Build the firefox based extension and zip it
+        run: pnpm build:plasmo --target=firefox-mv3 --zip
+        working-directory: browser-extension
+      - name: Build the edge based extension and zip it
+        run: pnpm build:plasmo --target=edge-mv3 --zip
+        working-directory: browser-extension
+
+      - name: Upload ChromeExtension to release
+        uses: Shopify/upload-to-release@master
+        with:
+          content-type: application/zip
+          path: ./browser-extension/build/chrome-mv3-prod.zip
+          name: ChromeExtension.zip
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Upload SafariExtension to release
+        uses: Shopify/upload-to-release@master
+        with:
+          content-type: application/zip
+          path: ./browser-extension/build/safari-mv3-prod.zip
+          name: SafariExtension.zip
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Upload FirefoxExtension to release
+        uses: Shopify/upload-to-release@master
+        with:
+          content-type: application/zip
+          path: ./browser-extension/build/firefox-mv3-prod.zip
+          name: FirefoxExtension.zip
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Upload EdgeExtension to release
+        uses: Shopify/upload-to-release@master
+        with:
+          content-type: application/zip
+          path: ./browser-extension/build/edge-mv3-prod.zip
+          name: EdgeExtension.zip
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Browser Platform Publish
+        uses: PlasmoHQ/bpp@v3
+        with:
+          keys: ${{ secrets.PUBLISHING_KEYS }}
+          # chrome-file: "build/myext_chromium_${{ env.EXT_VERSION }}.zip"
+          # edge-file: "edge/myext_edge_${{ env.EXT_VERSION }}.zip"
+          # edge-notes: "This is a test submission"
+          # version-file: "src/manifest.json"
+          # verbose: true
