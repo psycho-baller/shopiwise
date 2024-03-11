@@ -10,7 +10,7 @@ import (
 	"github.com/sashabaranov/go-openai"
 )
 
-type RequestBody struct {
+type requestBody struct {
 	ProductTitle string `json:"productTitle"`
 	UserInfo     string `json:"userInfo"`
 }
@@ -21,8 +21,10 @@ func Intentions(w http.ResponseWriter, r *http.Request) {
 	http.Error(w, "Method not allowed", http.StatusMethodNotAllowed)
 	return
 	}
+	// print headers
+	fmt.Println(r.Header.Get("Access-Control-Allow-Origin"))
 	// Parse the request body
-	var requestBody RequestBody
+	var requestBody requestBody
 	if err := json.NewDecoder(r.Body).Decode(&requestBody); err != nil {
 		http.Error(w, "Bad request", http.StatusBadRequest)
 		return
