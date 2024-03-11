@@ -4,7 +4,6 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
-	"log"
 	"net/http"
 	"os"
 
@@ -15,7 +14,8 @@ type RequestBody struct {
 	ProductTitle string `json:"productTitle"`
 	UserInfo     string `json:"userInfo"`
 }
-func intentions(w http.ResponseWriter, r *http.Request) {
+
+func Intentions(w http.ResponseWriter, r *http.Request) {
 	// Check if the request method is POST
 	if r.Method != http.MethodPost {
 	http.Error(w, "Method not allowed", http.StatusMethodNotAllowed)
@@ -51,16 +51,4 @@ func intentions(w http.ResponseWriter, r *http.Request) {
 	}
 	w.WriteHeader(http.StatusOK)
 	w.Write([]byte(resp.Choices[0].Message.Content))
-}
-
-func logger(f http.HandlerFunc) http.HandlerFunc {
-	return func(w http.ResponseWriter, r *http.Request) {
-		log.Printf("%s %s %s\n", r.RemoteAddr, r.Method, r.URL)
-		f(w, r)
-	}
-}
-func main() {
-	http.HandleFunc("/intentions", logger(intentions))
-	
-	http.ListenAndServe(":80", nil)
 }

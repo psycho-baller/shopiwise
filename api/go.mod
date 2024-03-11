@@ -1,4 +1,4 @@
-module shopiwise
+module github.com/psycho-baller/shopiwise
 
 go 1.22.0
 
