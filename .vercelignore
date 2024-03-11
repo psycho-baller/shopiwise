@@ -1,1 +1,9 @@
+
+# everything
+**/*
+
+# except api folder
+!api/
+
+# but also ignore the main.go file
 api/main.go
