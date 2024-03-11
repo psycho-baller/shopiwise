@@ -1,10 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { options } from '~lib/stores/options';
-	import browser from 'webextension-polyfill';
 
-	let apiKeyInput: HTMLInputElement;
-	let showOptions: boolean;
 	onMount(async () => {
 		await options.init();
 	});

@@ -2,10 +2,10 @@
 	"name": "shopiwise",
 	"displayName": "Shopiwise - Shop wisely",
 	"version": "0.0.1",
-	"description": "Only buy what you need",
+	"description": "Your personal shopping companion designed to empower mindful purchasing decisions",
 	"author": "Rami <rami.rami@ucalgary.ca> (ramimaalouf.tech)",
 	"license": "MIT",
-	"homepage_url": "https://github.com/psycho.baller/shopiwise",
+	"homepage_url": "https://github.com/psycho-baller/shopiwise",
 	"contributors": [
 		"Rami <rami.rami@ucalgary.ca> (ramimaalouf.tech)"
 	],
@@ -46,21 +46,21 @@
 	"manifest": {
 		"host_permissions": [
 			"https://www.amazon.ca/*",
-			"https://www.amazon.com/*"
+			"https://www.amazon.com/*",
+			"https://www.amazon.co.uk/*",
+			"https://www.amazon.de/*",
+			"https://www.amazon.fr/*",
+			"https://www.amazon.it/*",
+			"https://www.amazon.es/*",
+			"https://www.amazon.com.au/*",
+			"https://www.amazon.com.br/*",
+			"https://www.amazon.com.mx/*",
+			"https://www.amazon.in/*",
+			"https://www.amazon.co.jp/*"
 		],
 		"permissions": [
 			"storage",
-			"tabs",
-			"clipboardWrite"
-		],
-		"commands": {
-			"toggle-recording": {
-				"suggested_key": {
-					"default": "Ctrl+Shift+X",
-					"mac": "Command+Shift+X"
-				},
-				"description": "Toggle recording"
-			}
-		}
+			"tabs"
+		]
 	}
 }
