@@ -16,10 +16,11 @@ func enableCors(f http.HandlerFunc) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Access-Control-Allow-Methods", "POST, OPTIONS")
 		w.Header().Set("Access-Control-Allow-Origin", "chrome-extension://apooihdpamempipjkgbheiggadjjcoho")
-		if r.Method == "OPTIONS" {
-			w.Header().Set("Access-Control-Allow-Headers", "Content-Type")//, Accept, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization")
-			return
-		}
+		// Add the following line if your client is passing in headers
+		// if r.Method == "OPTIONS" {
+		// 	w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
+		// 	return
+		// }
 		f(w, r)
 	}
 }

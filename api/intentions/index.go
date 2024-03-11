@@ -21,8 +21,6 @@ func Intentions(w http.ResponseWriter, r *http.Request) {
 	http.Error(w, "Method not allowed", http.StatusMethodNotAllowed)
 	return
 	}
-	// print headers
-	fmt.Println(r.Header.Get("Access-Control-Allow-Origin"))
 	// Parse the request body
 	var requestBody requestBody
 	if err := json.NewDecoder(r.Body).Decode(&requestBody); err != nil {
