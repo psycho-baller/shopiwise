@@ -19,11 +19,10 @@ Your personal shopping companion designed to empower mindful purchasing decision
   - Go
   - OpenAI API
 - For the browser extension:
-  - TypeScript
-  - Svelte
-  - Tailwind CSS
-  - Svelte Motion for animations
-  - Plasmo framework to connect all these technologies together
+  - [Plasmo](https://docs.plasmo.com/): A framework for building Chrome extensions.
+  - [Svelte](https://svelte.dev/): A JavaScript framework for building user interfaces.
+  - [Tailwind CSS](https://tailwindcss.com/): A utility-first CSS framework.
+  - [TypeScript](https://www.typescriptlang.org/): A typed superset of JavaScript that compiles to plain JavaScript.
 
 ## Challenges we ran into
 
