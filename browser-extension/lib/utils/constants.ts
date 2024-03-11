@@ -1,0 +1,1 @@
+export const BASE_API_URL = process.env.NODE_ENV === 'production' ? 'https://shopiwise.vercel.app/api' : 'http://localhost:8000/api';

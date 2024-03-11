@@ -1,5 +1,7 @@
+import { BASE_API_URL } from "./utils/constants";
+
 export async function fetchIntentions(productTitle: string, userInfo: string) {
-	const res = await fetch('http://localhost:80/intentions', {
+	const res = await fetch(`${BASE_API_URL}/intentions`, {
 		method: 'POST',
 		body: JSON.stringify({ productTitle, userInfo }),
 		headers: {
