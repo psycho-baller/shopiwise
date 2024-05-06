@@ -2,6 +2,8 @@
 
 Your personal shopping companion designed to empower mindful purchasing decisions
 
+You can find the video demo [here](https://youtu.be/ZbUH-XVogsg)
+
 ## Inspiration
 
 - Our intentions and motivations can often be complex and subconscious, leading us to make purchases that might not align with our best interests or long-term goals. Sometimes, we make purchases based on emotions, societal pressures, or habits without fully considering the consequences. Recognizing and understanding these unrecognized intentions can help us make more informed and mindful purchasing decisions
